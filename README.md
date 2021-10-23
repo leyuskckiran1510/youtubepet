@@ -39,4 +39,4 @@ I have left some blank values with following comments So check the entrie code o
 And after making the required change sdelet the unnecessary comment and run your code finally and enjoy
 
 
-Roses are [red and **bold**]{color="red"} and
+`#FF00FF
