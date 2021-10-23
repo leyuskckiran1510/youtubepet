@@ -40,8 +40,7 @@ main.run()
 # Some inportant note
 ```diff
 - In some files like main.py ...
-- I have left some blank values with following comments So check the entrie code once and add your desire 
-  - pice of data like Vido title ...
+- I have left some blank values with following comments So check the entrie code once and add your desire pice of data like Video title ...
 - And after making the required change sdelet the unnecessary comment and run your code finally and enjoy
 
 ```
