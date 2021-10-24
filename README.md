@@ -4,6 +4,13 @@
 ! This is your pet who will download and complie the picess of downloded small files into one and upload it to youtube for you
 ! You just have to run a file and let it do all the boring task and during that time you can do something productive
 ```
+
+# insalling
+```python
+python -m pip install -r requirements.txt
+
+
+```
 # How to use
  clone this dir to your local device or Virtual servers
   
