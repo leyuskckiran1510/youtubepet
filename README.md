@@ -68,7 +68,7 @@ We're excited to share this powerful tool with the world, and we're confident th
 
 <!--[![Product Name Screen Shot][product-screenshot]](https://github.com/leyuskc/YoutubePet)-->
 
-### "It is an easy-to-use extension or plugin for your browser. To use it, simply install it and choose what you want to learn. Then let it do its thing."
+### "It is an easy-to-use for you passive income as youtube content creator. To use it, simply install it and choose what you want to learn. Then let it do its thing."
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
