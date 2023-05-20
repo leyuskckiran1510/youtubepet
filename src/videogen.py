@@ -26,10 +26,6 @@ def json_out(ide):
     for m in range(0, len(DIC)):
         if data[m]["node"]["is_video"]:
             dat = {}
-            # delete
-            with open("analyze.json", "a") as fl:
-                fl.write(json.dumps(data, indent=6))
-            # end
             dat["url"] = data[m]["node"]["video_url"]
             dat["thumb"] = data[m]["node"]["display_resources"][0]["src"]
             dat["of"] = data[m]["node"]["owner"]["username"]
