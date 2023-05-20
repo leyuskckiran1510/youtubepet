@@ -3,6 +3,8 @@ import json
 import random
 import requests
 from threading import Thread
+import compiler
+
 
 pjoin = os.path.join
 C_dir = os.getcwd()
@@ -81,6 +83,7 @@ def start():
 
     for i in thread_list:
         i.join()
+    compiler.compile(pjoin(C_dir, "youtube"))
 
 
 if __name__ == "__main__":

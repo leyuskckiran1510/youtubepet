@@ -2,6 +2,7 @@ import os
 import random
 import datetime
 import subprocess
+import main
 
 FILE_PATHS = []
 SELECTED_FILES = []
@@ -19,12 +20,14 @@ def load_log():
 
 def recursive_folder_travel(base_dir):
     if not os.path.isdir(base_dir):
+        if base_dir.lower().endswith("mp4") and base_dir not in LOG_DATA:
+            FILE_PATHS.append(base_dir)
         return
     for child_dir in os.listdir(base_dir):
         _path = pjoin(base_dir, child_dir)
         if os.path.isdir(_path):
             recursive_folder_travel(_path)
-        if child_dir.lower().endswith("mp4") and _path not in LOG_DATA:
+        if child_dir.lower().endswith("mp4") and _path not in LOG_DATA and not child_dir.endswith("output.mp4"):
             FILE_PATHS.append(_path)
 
 
@@ -45,9 +48,7 @@ def ffmpeg_call(files_txt):
         "yuv420p",
         f"{pjoin(MY_PATH, 'output.mp4')}",
     ]
-    process = subprocess.Popen(
-        command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE
-    )
+    process = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     _, stderr = process.communicate()
     process.wait()
     with open(pjoin(MY_PATH, "compile.log"), "w") as fl:
@@ -72,8 +73,8 @@ def compile(PATH=MY_PATH):
         for i in L:
             fl2.write(i + "\n")
     print("Logging completed")
+    main.run()
 
 
-# recursive_folder_travel("/home/tester/Videos")
-# print("\n".join(FILE_PATHS).replace("compiler.py", ""))
-compile()
+if __name__ == "__main__":
+    compile()

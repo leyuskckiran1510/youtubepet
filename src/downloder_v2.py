@@ -3,6 +3,7 @@ import json
 import random
 import requests
 from multiprocessing import Pool
+import compiler
 
 pjoin = os.path.join
 C_dir = os.getcwd()
@@ -80,6 +81,7 @@ def start():
 
     pool.close()
     pool.join()
+    compiler.compile(pjoin(C_dir, "youtube"))
 
 
 if __name__ == "__main__":

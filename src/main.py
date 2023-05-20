@@ -16,7 +16,7 @@ def run():
         VIDEO_FILE = f"/home/tester/Videos/TimeLapse/{YEAR}/{MONTH}/{DAY}/output.mp4"
 
         service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
-        upload_date_time = datetime.datetime.now().isoformat() + ".000Z"
+        # upload_date_time = datetime.datetime.now().isoformat() + ".000Z"
         request_body = {
             "snippet": {
                 "categoryI": 19,
@@ -33,18 +33,15 @@ def run():
             "status": {
                 "privacyStatus": "unlisted",
                 "madeForKids": False,
-                "publishAt": upload_date_time,
                 "selfDeclaredMadeForKids": False,
             },
             "notifySubscribers": False,
         }
 
-        mediaFile = MediaFileUpload("output.MP4")
+        mediaFile = MediaFileUpload("output.mp4")
 
         response_upload = (
-            service.videos()
-            .insert(part="snippet,status", body=request_body, media_body=mediaFile)
-            .execute()
+            service.videos().insert(part="snippet,status", body=request_body, media_body=mediaFile).execute()
         )
 
         service.thumbnails().set(
@@ -52,14 +49,7 @@ def run():
             media_body=MediaFileUpload("thumnail.jpg"),
         ).execute()
     except Exception as e:
-        print(
-            "[*]Most probably your quota is expired change the youtbe api plan or add credit card to get extra quotas "
-        )
         print("Actual Error \n\t[+] ", e)
-
-
-def main():
-    ...
 
 
 if __name__ == "__main__":
