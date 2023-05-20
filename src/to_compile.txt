@@ -1,0 +1,7 @@
+file '/home/tester/Videos/TimeLapse/2023/05/15/output.mp4'
+file '/home/tester/Videos/TimeLapse/2023/05/17/output.mp4'
+file '/home/tester/Videos/TimeLapse/2023/05/17/resedue.mp4'
+file '/home/tester/Videos/TimeLapse/2023/05/17/todaycompile.mp4'
+file '/home/tester/Videos/TimeLapse/2023/05/16/todaycompile.mp4'
+file '/home/tester/Videos/TimeLapse/2023/05/17/todaycompile.mp4'
+file '/home/tester/Videos/TimeLapse/2023/05/17/resedue.mp4'
