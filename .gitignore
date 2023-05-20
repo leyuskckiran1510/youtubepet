@@ -5,7 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+*secret*
 # Distribution / packaging
 .Python
 build/
@@ -26,6 +26,12 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+
+youtube
+*test*
+*token*
+*pickle*
+/src/*.jpg
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -102,6 +108,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+virtual
 .env
 .venv
 env/
@@ -109,6 +116,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
 
 # Spyder project settings
 .spyderproject

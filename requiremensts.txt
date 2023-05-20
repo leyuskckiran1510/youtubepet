@@ -1,7 +1,0 @@
-requests
-moviepy
-pillow
-google.auth.transport.requests
-googleapiclient
-google_auth_oauthlib
-pickel

@@ -56,11 +56,11 @@ def prep(of: str, data_list: list) -> None:
         choosed = random.choices(data_list, k=NOFVTDFEU)
         for i in choosed:
             if check_dups(i["of"], i["url"]):
-                print("Not contnidawds")
                 continue
-            res = down(i["url"], i["thm"], i["of"])
-            fl.write(i["url"].split("?")[0] + "\n")
-            fl.flush()
+            else:
+                res = down(i["url"], i["thumb"], i["of"])
+                fl.write(i["url"].split("?")[0] + "\n")
+                fl.flush()
 
 
 def start():

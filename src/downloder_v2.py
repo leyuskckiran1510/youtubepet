@@ -53,12 +53,12 @@ def prep(of: str, data_list: list) -> None:
             fl.seek(0)
             return url.split("?")[0] in fl.read().split("\n")
 
-        choosed = random.choices(data_list, k=NOFVTDFEU)
+        choosed = random.choices(data_list, k=min(len(data_list) - 1, NOFVTDFEU))
         for i in choosed:
             if check_dups(i["of"], i["url"]):
                 print("Not contnidawds")
                 continue
-            res = down(i["url"], i["thm"], i["of"])
+            res = down(i["url"], i["thumb"], i["of"])
             fl.write(i["url"].split("?")[0] + "\n")
             fl.flush()
 

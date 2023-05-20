@@ -15,33 +15,10 @@ def json_out(ide):
         "variables": '{"id":"' + str(ide) + '","first":50}',
     }
     HEADERS = {
-        "Accept-Encoding": "gzip, deflate",
-        "Accept-Language": "en-US,en;q=0.8",
-        "Connection": "keep-alive",
-        "Content-Length": "0",
-        "Referer": "https://www.instagram.com/",
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36",
-        "sessionid": "",
-        "mid": "",
-        "ig_pr": "1",
-        "ig_vw": "1920",
-        "csrftoken": "",
-        "s_network": "",
-        "ds_user_id": "",
-        "x-ig-app-id": "936619743392459",
-    }
-    # {
-    #     "x-ig-app-id": "936619743392459",
-    # }
+    }"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36",
 
     res = requests.request("GET", GRAPHQL_URL, params=QUERY, headers=HEADERS)
-    DIC = (
-        res.json()
-        .get("data", {})
-        .get("user", {})
-        .get("edge_owner_to_timeline_media", {})
-        .get("edges", None)
-    )
+    DIC = res.json().get("data", {}).get("user", {}).get("edge_owner_to_timeline_media", {}).get("edges", None)
     if not DIC:
         print(res.json())
         return
